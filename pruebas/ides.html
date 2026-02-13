@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Librería</title>
+</head>
+<body>
+
+  <h1>Sistema Librería</h1>
+  <p>Abre la consola del navegador para ver los resultados.</p>
+
+  <script>
+    // =======================
+    // ENTIDAD CATEGORIA
+    // =======================
+    class Categoria {
+      constructor(idCategoria, categoria, descripcion) {
+        this._idCategoria = idCategoria;
+        this._categoria = categoria;
+        this._descripcion = descripcion;
+      }
+
+      getCategoria() {
+        return this._categoria;
+      }
+    }
+
+    // =======================
+    // ENTIDAD AUTOR
+    // =======================
+    class Autor {
+      constructor(idAutor, nombre, apellido, pais, direccion, telefono, correo) {
+        this._idAutor = idAutor;
+        this._nombre = nombre;
+        this._apellido = apellido;
+        this._pais = pais;
+        this._direccion = direccion;
+        this._telefono = telefono;
+        this._correo = correo;
+      }
+
+      getNombreCompleto() {
+        return this._nombre + " " + this._apellido;
+      }
+    }
+
+    // =======================
+    // ENTIDAD LIBRO
+    // =======================
+    class Libro {
+      constructor(
+        idLibro, titulo, editorial, numPaginas, edicion, idioma,
+        fechaPublicacion, descripcion, tipoPasta, isbn,
+        numEjemplares, portada, presentacion, precio,
+        idCategoria, idAutor
+      ) {
+        this._idLibro = idLibro;
+        this._titulo = titulo;
+        this._editorial = editorial;
+        this._numPaginas = numPaginas;
+        this._edicion = edicion;
+        this._idioma = idioma;
+        this._fechaPublicacion = fechaPublicacion;
+        this._descripcion = descripcion;
+        this._tipoPasta = tipoPasta;
+        this._isbn = isbn;
+        this._numEjemplares = numEjemplares;
+        this._portada = portada;
+        this._presentacion = presentacion;
+        this._precio = precio;
+        this._idCategoria = idCategoria;
+        this._idAutor = idAutor;
+      }
+
+      getTitulo() {
+        return this._titulo;
+      }
+
+      getPrecio() {
+        return this._precio;
+      }
+    }
+
+    // =======================
+    // ENTIDAD FACTURA
+    // =======================
+    class Factura {
+      constructor(idFactura, numFactura, fecha, totalNeto, iva, idCliente) {
+        this._idFactura = idFactura;
+        this._numFactura = numFactura;
+        this._fecha = fecha;
+        this._totalNeto = totalNeto;
+        this._iva = iva;
+        this._total = 0;
+        this._idCliente = idCliente;
+      }
+
+      calcularTotal() {
+        this._total = this._totalNeto + this._iva;
+      }
+
+      getTotal() {
+        return this._total;
+      }
+    }
+
+    // =======================
+    // ENTIDAD FACTURA DETALLE
+    // =======================
+    class FacturaDetalle {
+      constructor(idFacturaDetalle, cantidad, subtotal, idFactura, idLibro) {
+        this._idFacturaDetalle = idFacturaDetalle;
+        this._cantidad = cantidad;
+        this._subtotal = subtotal;
+        this._idFactura = idFactura;
+        this._idLibro = idLibro;
+      }
+    }
+
+    // =======================
+    // PRUEBA EN CONSOLA
+    // =======================
+    const categoria = new Categoria(1, "Novela", "Narrativa literaria");
+    const autor = new Autor(1, "Gabriel", "García Márquez", "Colombia", "Aracataca", "123456", "autor@mail.com");
+
+    const libro = new Libro(
+      1, "Cien años de soledad", "Sudamericana", 471, "Primera",
+      "Español", "1967-05-30", "Novela clásica", "Dura",
+      "9788439720491", 10, "imagen.jpg", "Física", 25.99, 1, 1
+    );
+
+    const factura = new Factura(1, "F-001", new Date(), 25.99, 3.12, 1);
+    factura.calcularTotal();
+
+    console.log("Categoría:", categoria.getCategoria());
+    console.log("Autor:", autor.getNombreCompleto());
+    console.log("Libro:", libro.getTitulo(), "Precio:", libro.getPrecio());
+    console.log("Total Factura:", factura.getTotal());
+  </script>
+
+</body>
+</html>

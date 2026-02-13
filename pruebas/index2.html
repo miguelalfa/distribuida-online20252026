@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Sistema Librería</title>
+    <style>
+        body {
+            background-color: orange;
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1, h2 {
+            text-align: center;
+        }
+
+        .seccion {
+            background-color: #fff3e0;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+
+        label {
+            display: block;
+            margin-top: 8px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 6px;
+            margin-top: 3px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Sistema de Gestión de Librería</h1>
+
+<!-- LIBRO -->
+<div class="seccion">
+    <h2>Libro</h2>
+    <label>Id Libro</label><input type="number">
+    <label>Título</label><input type="text">
+    <label>Editorial</label><input type="text">
+    <label>Número de páginas</label><input type="number">
+    <label>Edición</label><input type="text">
+    <label>Idioma</label><input type="text">
+    <label>Fecha de publicación</label><input type="date">
+    <label>Descripción</label><input type="text">
+    <label>Tipo de pasta</label><input type="text">
+    <label>ISBN</label><input type="text">
+    <label>Número de ejemplares</label><input type="number">
+    <label>Portada</label><input type="text">
+    <label>Presentación</label><input type="text">
+    <label>Precio</label><input type="number" step="0.01">
+    <label>Id Categoría</label><input type="number">
+    <label>Id Autor</label><input type="number">
+</div>
+
+<!-- FACTURA -->
+<div class="seccion">
+    <h2>Factura</h2>
+    <label>Id Factura</label><input type="number">
+    <label>Número de factura</label><input type="text">
+    <label>Fecha</label><input type="date">
+    <label>Total neto</label><input type="number" step="0.01">
+    <label>IVA</label><input type="number" step="0.01">
+    <label>Total</label><input type="number" step="0.01">
+    <label>Id Cliente</label><input type="number">
+</div>
+
+<!-- FACTURA DETALLE -->
+<div class="seccion">
+    <h2>Factura Detalle</h2>
+    <label>Id Factura Detalle</label><input type="number">
+    <label>Cantidad</label><input type="number">
+    <label>Subtotal</label><input type="number" step="0.01">
+    <label>Id Factura</label><input type="number">
+    <label>Id Libro</label><input type="number">
+</div>
+
+<!-- AUTOR -->
+<div class="seccion">
+    <h2>Autor</h2>
+    <label>Id Autor</label><input type="number">
+    <label>Nombre</label><input type="text">
+    <label>Apellido</label><input type="text">
+    <label>País</label><input type="text">
+    <label>Dirección</label><input type="text">
+    <label>Teléfono</label><input type="text">
+    <label>Correo</label><input type="email">
+</div>
+
+<!-- CATEGORIA -->
+<div class="seccion">
+    <h2>Categoría</h2>
+    <label>Id Categoría</label><input type="number">
+    <label>Categoría</label><input type="text">
+    <label>Descripción</label><input type="text">
+</div>
+
+</body>
+</html>
